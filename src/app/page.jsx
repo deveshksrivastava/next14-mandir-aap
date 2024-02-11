@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
+import { useState,useRef } from "react";
 
 const elastic = [
   {
@@ -39,8 +40,7 @@ const CustomSlide = (props) => {
             backgroundImage: `url(${imgurl})`,
             opacity: "60%",
           }}
-        >
-        </div>
+        ></div>
         <div className="absolute  bg-transparent z-10 sm:h-[100vh] h-[50vh] font-serif  overflow-hidden w-full bg-no-repeat bg-cover flex flex-col justify-center items-center ">
           <h2 className=" font-bold  text-white sm:text-[4rem] leading-tight text-2xl flex justify-center sm:p-0  p-5 z-20  ">
             {title}
@@ -55,7 +55,11 @@ const CustomSlide = (props) => {
     </>
   );
 };
+ 
+
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef();
   const settings = {
     dots: true,
     infinite: true,
@@ -65,23 +69,52 @@ const Home = () => {
     slidesToScroll: 1,
     autoplaySpeed: 2000,
     arrows: false,
-    appendDots: (dots) => (
-      <div
-        style={{
-          position: "absolute",
-          bottom: "0px",
-          
-        }}
-      >
-        <ul className="p-2"> {dots} </ul>
-      </div>
-    ),
+    // prevArrow: <CustomPrevArrow />,
+    // nextArrow: <CustomNextArrow />,
+    afterChange: (current) => setCurrentSlide(current),
+    appendDots: (dots) => {
+      return (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "0px",
+          }}
+        >
+          <ul className="p-5 border-1">
+            {dots.map((dot, index) => (
+              <li
+                className={`w-[10px] h-[10px]   border rounded-full hover:bg-red-400 ${
+                  index === currentSlide ? "bg-red-400" : ""
+                }`}
+                key={dot.key}
+              />
+            ))}
+          </ul>
+        </div>
+      );
+    },
   };
+  const CustomArrow = ({ direction }) => {
+    const goToSlide = () => {
+      if (sliderRef.current) {
+        direction === "prev" ? sliderRef.current.slickPrev() : sliderRef.current.slickNext();
+      }
+    };
+  
+    return (
+      <button
+        className={`sm:flex hidden absolute ${direction === "prev" ? "left-0" : "right-0"} top-1/2 transform -translate-y-1/2 z-10`}
+        onClick={goToSlide}
+      >
+      {direction === "prev" ?(<button className="bg-transparent border rounded text-white  p-1 ml-1 hover:bg-red-500">prev</button> ): (<button className="bg-transparent border rounded text-white p-1 mr-1 hover:bg-red-500">next</button>)}
 
+      </button>
+    );
+  };
   return (
     <>
       <div className="slider-container">
-        <Slider {...settings}>
+        <Slider {...settings} ref={sliderRef}>
           {elastic.map((item) => (
             <CustomSlide
               key={item.id}
@@ -91,25 +124,10 @@ const Home = () => {
             />
           ))}
         </Slider>
+        <CustomArrow direction="prev"/>
+        <CustomArrow direction="next"/>
+ 
       </div>
-      {/* <div className={`styles.container bg-white text-red-500`}>
-        
-          <div className={styles.contWrapper}>
-            <Carousel breakPoints={breakPoints}>
-              {elastic.map((item) => (
-                <div
-                  key={item.id}
-                  className={styles.card}
-                  style={{ backgroundImage: `url(${item.imageUrl})` }}
-                >
-                  <div className={styles.title}>
-                    <h3>{item.title} </h3>
-                  </div>
-                </div>
-              ))}
-            </Carousel>
-          </div>
-        </div> */}
     </>
   );
 };
