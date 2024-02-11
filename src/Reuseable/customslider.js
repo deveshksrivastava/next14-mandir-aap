@@ -16,9 +16,9 @@ const CustomSlide = (props) => {
               {title}
             </h2>
             <p className="sm:p-10 hidden sm:flex">{label}</p>
-            <button className="bg-red-500 bg:hover sm:w-[10rem] p-2">
+            <div className="bg-red-500 bg:hover sm:w-[10rem] p-2">
               Read More
-            </button>
+            </div>
           </div>
         </div>
         {/* </div> */}
