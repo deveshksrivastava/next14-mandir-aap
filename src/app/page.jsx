@@ -4,9 +4,10 @@ import styles from "./home.module.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import CustomSlide from "@/Reuseable/customslider";
 import Slider from "react-slick";
 import { useState,useRef } from "react";
+import CustomArrow from "@/Reuseable/customarrow";
 
 const elastic = [
   {
@@ -28,33 +29,33 @@ const elastic = [
     imageUrl: "/slider/slider3.jpg",
   },
 ];
-const CustomSlide = (props) => {
-  const { index, imgurl, title, label } = props;
-  return (
-    <>
-      {/* <div className=" bg-blend-screen w-full z-0"> */}
-      <div key={index} className="relative  sm:h-[100vh] h-[60vh]    w-full">
-        <div
-          className={`absolute insert-0   top-0 z-10 sm:h-[100vh] h-[60vh]   overflow-hidden w-full bg-no-repeat bg-cover flex flex-col justify-center items-center  `}
-          style={{
-            backgroundImage: `url(${imgurl})`,
-            opacity: "60%",
-          }}
-        ></div>
-        <div className="absolute  bg-transparent z-10 sm:h-[100vh] h-[50vh] font-serif  overflow-hidden w-full bg-no-repeat bg-cover flex flex-col justify-center items-center ">
-          <h2 className=" font-bold  text-white sm:text-[4rem] leading-tight text-2xl flex justify-center sm:p-0  p-5 z-20  ">
-            {title}
-          </h2>
-          <p className="sm:p-10 hidden sm:flex">{label}</p>
-          <button className="bg-red-500 bg:hover sm:w-[10rem] p-2">
-            Read More
-          </button>
-        </div>
-      </div>
-      {/* </div> */}
-    </>
-  );
-};
+// const CustomSlide = (props) => {
+//   const { index, imgurl, title, label } = props;
+//   return (
+//     <>
+//       {/* <div className=" bg-blend-screen w-full z-0"> */}
+//       <div key={index} className="relative  sm:h-[100vh] h-[60vh]    w-full">
+//         <div
+//           className={`absolute insert-0   top-0 z-10 sm:h-[100vh] h-[60vh]   overflow-hidden w-full bg-no-repeat bg-cover flex flex-col justify-center items-center  `}
+//           style={{
+//             backgroundImage: `url(${imgurl})`,
+//             opacity: "60%",
+//           }}
+//         ></div>
+//         <div className="absolute  bg-transparent z-10 sm:h-[100vh] h-[50vh] font-serif  overflow-hidden w-full bg-no-repeat bg-cover flex flex-col justify-center items-center ">
+//           <h2 className=" font-bold  text-white sm:text-[4rem] leading-tight text-2xl flex justify-center sm:p-0  p-5 z-20  ">
+//             {title}
+//           </h2>
+//           <p className="sm:p-10 hidden sm:flex">{label}</p>
+//           <button className="bg-red-500 bg:hover sm:w-[10rem] p-2">
+//             Read More
+//           </button>
+//         </div>
+//       </div>
+//       {/* </div> */}
+//     </>
+//   );
+// };
  
 
 const Home = () => {
@@ -69,10 +70,13 @@ const Home = () => {
     slidesToScroll: 1,
     autoplaySpeed: 2000,
     arrows: false,
-    // prevArrow: <CustomPrevArrow />,
-    // nextArrow: <CustomNextArrow />,
     afterChange: (current) => setCurrentSlide(current),
     appendDots: (dots) => {
+      const handleDotClick = (index) => {
+        if (sliderRef.current) {
+          sliderRef.current.slickGoTo(index);
+        }
+      };
       return (
         <div
           style={{
@@ -87,6 +91,7 @@ const Home = () => {
                   index === currentSlide ? "bg-red-400" : ""
                 }`}
                 key={dot.key}
+                onClick={() => handleDotClick(index)}
               />
             ))}
           </ul>
@@ -94,23 +99,12 @@ const Home = () => {
       );
     },
   };
-  const CustomArrow = ({ direction }) => {
-    const goToSlide = () => {
-      if (sliderRef.current) {
-        direction === "prev" ? sliderRef.current.slickPrev() : sliderRef.current.slickNext();
-      }
-    };
-  
-    return (
-      <button
-        className={`sm:flex hidden absolute ${direction === "prev" ? "left-0" : "right-0"} top-1/2 transform -translate-y-1/2 z-10`}
-        onClick={goToSlide}
-      >
-      {direction === "prev" ?(<button className="bg-transparent border rounded text-white  p-1 ml-1 hover:bg-red-500">prev</button> ): (<button className="bg-transparent border rounded text-white p-1 mr-1 hover:bg-red-500">next</button>)}
-
-      </button>
-    );
+  const goToSlide = () => {
+    if (sliderRef.current) {
+      direction === "prev" ? sliderRef.current.slickPrev() : sliderRef.current.slickNext();
+    }
   };
+
   return (
     <>
       <div className="slider-container">
@@ -124,8 +118,8 @@ const Home = () => {
             />
           ))}
         </Slider>
-        <CustomArrow direction="prev"/>
-        <CustomArrow direction="next"/>
+        <CustomArrow direction="prev" onClick={goToSlide}/>
+        <CustomArrow direction="next" onClick={goToSlide}/>
  
       </div>
     </>
