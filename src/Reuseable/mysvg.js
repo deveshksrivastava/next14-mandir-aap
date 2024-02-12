@@ -9,7 +9,7 @@ const Mysvg = ({width,height}) => {
     //   viewBox="0 0 512.003 512.003"
     // >
     <svg
-      className="hover:fill-yellow-500 sm:w-[5rem] sm:h-[5rem] w-[50px] h-[50px] "
+      className="hover:fill-black fill-yellow-500 sm:w-full sm:h-[5rem] w-[50px] h-[50px] "
     //   height="100px"
     //   width="100px"
     //   version="1.1"

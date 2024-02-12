@@ -3,7 +3,7 @@ import React from "react";
  const Krisna = ({width,height}) => {
   return (
     <svg
-      className="hover:fill-yellow-500 sm:w-[5rem] sm:h-[5rem] w-[50px] h-[50px]"
+      className="hover:hover:fill-black fill-yellow-500 sm:w-full sm:h-[5rem] w-[50px] h-[50px]"
       //   fill="#000000"
       // height="100px"
       // width="100px"
