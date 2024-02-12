@@ -11,6 +11,10 @@ import CustomArrow from "@/Reuseable/customarrow";
 import { FaEllipsisH } from "react-icons/fa";
 import { MdFrontHand } from "react-icons/md";
 import { GiByzantinTemple } from "react-icons/gi";
+import { TbFlower } from "react-icons/tb";
+import { SiCentos } from "react-icons/si";
+import Mysvg from "@/Reuseable/mysvg";
+import Krisna  from "@/Reuseable/Krisna";
 
 const elastic = [
   {
@@ -86,22 +90,22 @@ const Home = () => {
     {
       icon: MdFrontHand,
       desc: "Sed do eiusm od tempor",
-      title: "Card 1",
+      title: "Retuals",
     },
     {
-      icon: MdFrontHand,
+      icon: SiCentos,
       desc: "Sed do eiusm od tempor",
-      title: "Card 2",
+      title: "Temples",
     },
     {
-      icon: GiByzantinTemple,
+      icon: Krisna,
       desc: "Sed do eiusm od tempor",
-      title: "Card 3",
+      title: "Excursions",
     },
     {
-      title: "Card 4",
+      title: "Trips",
       desc: "Sed do eiusm od tempor",
-      icon: GiByzantinTemple,
+      icon: Mysvg,
     },
   ];
 
@@ -129,15 +133,16 @@ const Home = () => {
               onMouseLeave={handleMouseLeave}
             >
               <div className="min-w-full  items-center text-center flex flex-col gap-10 ">
-                <item.icon
-                  className={`text-[2rem]   ${
+                <item.icon 
+                  className={`text-[6rem] sm:w-[5rem] sm:h-[5rem] w-[50px] h-[50px]  ${
                     isHovered === index ? "fill-gray-200" : "fill-yellow-400"
                   } `}
                   ref={iconRef}
                 />
+               
                 <div>
-                <h1 className="sm:text-[2rem] text-2xl font-bold">{item.title}</h1>
-                <p className="text-gray-300">{item.desc}</p>
+                <h1 className="sm:text-[1.3rem] text-2xl font-bold">{item.title}</h1>
+                <p className="text-[#888888]">{item.desc}</p>
                 </div>
                 <FaEllipsisH
                   className={`text-[2rem] ${
@@ -177,14 +182,48 @@ const Home = () => {
             width={50}
             alt="logo"
           />
-          <h1 className="text-[2rem] font-medium">Krisna Temples</h1>
+           <h1 className="text-[2rem] font-medium">Krisna Temples</h1>
           <h1 className="md:text-[4rem]  text-[2rem] sm:p-0 text-center w-full   font-extrabold">
             Hare Krisna Temple Tours
           </h1>
-
           <CustomCard data={cardData} />
         </div>
+
       </section>
+      <section className="text-black ">
+      <div className="w-full sm:p-20 p-5 leading-none min-h-[100vh] bg-white   ">
+            <h1 className="font-medium">
+              SPIRITUAL EXCURSIONS
+            </h1>
+          <div className="sm:flex  w-full gap-3 justify-between">
+
+          <div className="sm:w-[50%] w-full font-bold ">
+            <h1 className=" lg:text-[3rem] text-[2rem]"> 
+
+            We Do Tours to Hare Krishna Temples
+            </h1>
+          </div>
+          <div className="sm:w-[50%] w-full sm:flex flex-col  mt-5 font-medium  leading-7">
+            
+            <p className="text-[#888888] font-light  ">
+            Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitacion ullamco.
+            </p>
+            <br />
+            <p className="text-[#888888] font-light">
+            Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+           
+            <div className="mt-2">
+              {/* <p className="border-b-2 border-black transition duration-300 ease-in-out hover:border-transparent "> */}
+              <p className={`${styles.coollink} font-bold  `}>
+                Read More
+              </p>
+            </div>
+          </div>
+          </div>
+      </div>
+      </section>  
+      
     </>
   );
 };
