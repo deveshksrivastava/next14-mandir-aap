@@ -14,6 +14,7 @@ import { SiCentos } from "react-icons/si";
 import Mysvg from "@/Reuseable/mysvg";
 import Krisna from "@/Reuseable/Krisna";
 import YourComponent from "@/Reuseable/slider";
+import CardLayout from "@/Reuseable/cardsectionlayout";
 
 const elastic = [
   {
@@ -109,56 +110,29 @@ const Home = () => {
       icon: Mysvg,
     },
   ];
+  
+  const seccardData = [
+    {
+      id: 1,
+      icon: "/card/card1.jpg",
+      desc: "Sed do eiusm od tempor",
+      title: "Retuals",
+    },
+    {
+      id:2,
+      icon: "/card/card2.jpg",
+      desc: "Sed do eiusm od tempor",
+      title: "Temples",
+    },
+    {
+      id:3,
+      icon: "/card/card3.jpg",
+      desc: "Sed do eiusm od tempor",
+      title: "Excursions",
+    }
 
-  const [isHovered, setIsHovered] = useState(false);
-  const iconRef = useRef(null);
+  ];
 
-  const handleMouseEnter = (index) => {
-    setIsHovered(index);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(null);
-  };
-
-  const CustomCard = ({ data }) => {
-    return (
-      <>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:px-20 px-5 gap-5 items-center w-full ">
-          {data.map((item, index) => (
-            <div
-              key={index}
-              className="sm:p-4 p-2  w-[100%]   bg-white border text-black "
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="min-w-full  items-center text-center flex flex-col gap-10 ">
-                <item.icon
-                  className={`text-[6rem] sm:w-[5rem] sm:h-[5rem] w-[50px] h-[50px]  ${
-                    isHovered === index ? "fill-gray-200" : "fill-yellow-400"
-                  } `}
-                  ref={iconRef}
-                />
-
-                <div>
-                  <h1 className="sm:text-[1.3rem] text-2xl font-bold">
-                    {item.title}
-                  </h1>
-                  <p className="text-[#888888]">{item.desc}</p>
-                </div>
-                <FaEllipsisH
-                  className={`text-[2rem] ${
-                    isHovered === index ? "fill-yellow-400" : "fill-gray-200"
-                  } `}
-                  ref={iconRef}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </>
-    );
-  };
 
   return (
     <>
@@ -176,21 +150,12 @@ const Home = () => {
         <CustomArrow direction="prev" onClick={goToSlide} />
         <CustomArrow direction="next" onClick={goToSlide} />
       </section>
-      <section className=" sm:p-0  ">
-        <div className="w-full py-20 gap-10 min-h-[100vh] bg-yellow-50 text-black flex flex-col justify-center items-center ">
-          <Image
-            src="/Logo-retina-inverse.png"
-            height={50}
-            width={50}
-            alt="logo"
-          />
-          <h1 className="text-[2rem] font-medium">Krisna Temples</h1>
-          <h1 className="md:text-[4rem]  text-[2rem] sm:p-0 text-center w-full   font-extrabold">
-            Hare Krisna Temple Tours
-          </h1>
-          <CustomCard data={cardData} />
-        </div>
-      </section>
+   
+      <CardLayout 
+        title="Krisna Temples"
+        desc="Hare Krisna Temple Tours"
+        data={cardData}
+      />
       <section className="text-black ">
         <div className="w-full sm:p-20 p-5 leading-none min-h-[100vh] bg-white flex flex-col gap-10   ">
           <h1 className="font-medium">SPIRITUAL EXCURSIONS</h1>
@@ -221,7 +186,12 @@ const Home = () => {
           <YourComponent />
         </div>
       </section>
-    </>
+      <CardLayout 
+        title="DONATION & HELP"
+        desc="Help Save Spiritual Heritage"
+        cardData={seccardData}
+      />
+     </>
   );
 };
 
