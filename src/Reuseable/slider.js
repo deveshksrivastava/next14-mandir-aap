@@ -35,7 +35,7 @@ const YourComponent = () => {
 
 
   const settings = {
-    // centerMode: true,
+    centerMode: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -113,15 +113,15 @@ const YourComponent = () => {
             className="sm:p-4 p-2  w-[100%] mb-10    bg-white  text-black "
           >
             <div>
-              <div className={` bg-orange-500 p-10 flex flex-col gap-3 `}>
+              <div className={` bg-orange-500 p-10 flex flex-col gap-3  `}>
                 <div className="w-full flex justify-center sm:text-3xl">
                   <BiSolidQuoteAltRight />
                 </div>
-                <span>
+                <p className="gap-3 leading-loose">
                   Just completed React Tutorials! Great resource to understand
                   the core concepts of React. Check them out! For the most part
                   it has been fun and enjoyable.
-                </span>
+                </p>
               </div>
               <span className="flex justify-center items-center overflow-visible mt-[-12px] text-3xl">
                 <BiCaretDown className="fill-orange-500" />

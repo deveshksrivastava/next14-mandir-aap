@@ -1,3 +1,5 @@
+import {  BiCaretLeft, BiCaretRight } from "react-icons/bi";
+
 const CustomArrow = ({ direction, onClick }) => {
   return (
     <div
@@ -7,17 +9,18 @@ const CustomArrow = ({ direction, onClick }) => {
     >
       {direction === "prev" ? (
         <button
-          className="bg-transparent border rounded text-white  p-1 ml-1 hover:bg-red-500"
+          className="bg-transparent border rounded-full text-white  p-1 ml-1 hover:bg-red-500"
           onClick={() => onClick("prev")}
         >
-          prev
+        <BiCaretLeft />
+          {/* prev */}
         </button>
       ) : (
         <button
-          className="bg-transparent border rounded text-white p-1 mr-1 hover:bg-red-500"
+          className="bg-transparent border rounded-full text-white p-1 mr-1 hover:bg-red-500"
           onClick={() => onClick("next")}
         >
-          next
+          <BiCaretRight />
         </button>
       )}
     </div>

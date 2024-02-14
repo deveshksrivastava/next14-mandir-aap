@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import styles from "./home.module.css";
 
 import "slick-carousel/slick/slick.css";
@@ -8,13 +7,14 @@ import CustomSlide from "@/Reuseable/customslider";
 import Slider from "react-slick";
 import { useState, useRef } from "react";
 import CustomArrow from "@/Reuseable/customarrow";
-import { FaEllipsisH } from "react-icons/fa";
+
 import { MdFrontHand } from "react-icons/md";
 import { SiCentos } from "react-icons/si";
 import Mysvg from "@/Reuseable/mysvg";
 import Krisna from "@/Reuseable/Krisna";
 import YourComponent from "@/Reuseable/slider";
 import CardLayout from "@/Reuseable/cardsectionlayout";
+import VideoModal from "@/Reuseable/videomodel";
 
 const elastic = [
   {
@@ -110,7 +110,7 @@ const Home = () => {
       icon: Mysvg,
     },
   ];
-  
+
   const seccardData = [
     {
       id: 1,
@@ -119,20 +119,28 @@ const Home = () => {
       title: "Retuals",
     },
     {
-      id:2,
+      id: 2,
       icon: "/card/card2.jpg",
       desc: "Sed do eiusm od tempor",
       title: "Temples",
     },
     {
-      id:3,
+      id: 3,
       icon: "/card/card3.jpg",
       desc: "Sed do eiusm od tempor",
       title: "Excursions",
-    }
-
+    },
   ];
 
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  const openVideo = () => {
+    setIsVideoOpen(true);
+  };
+
+  const closeVideo = () => {
+    setIsVideoOpen(false);
+  };
 
   return (
     <>
@@ -150,8 +158,8 @@ const Home = () => {
         <CustomArrow direction="prev" onClick={goToSlide} />
         <CustomArrow direction="next" onClick={goToSlide} />
       </section>
-   
-      <CardLayout 
+
+      <CardLayout
         title="Krisna Temples"
         desc="Hare Krisna Temple Tours"
         data={cardData}
@@ -182,16 +190,32 @@ const Home = () => {
               </div>
             </div>
           </div>
-
           <YourComponent />
         </div>
       </section>
-      <CardLayout 
+      <CardLayout
         title="DONATION & HELP"
         desc="Help Save Spiritual Heritage"
         cardData={seccardData}
       />
-     </>
+      <section className=" flex items-center sm:h-[100vh] 2xl:h-[50vh] h-[50vh]   justify-center ">
+        <div className="absolute bg-play-back sm:h-[100vh] 2xl:h-[50vh] h-[50vh] w-full bg-cover bg-no-repeat bg-center bg-black opacity-[0.5] "></div>
+        <span className="animate-ping  absolute inline-flex h-10 w-[4rem] rounded-full bg-sky-400 opacity-75"></span>
+        <p
+          className=" text-[1rem] z-10 uppercase font-extralight border-2 rounded-3xl border-r-cyan-300 cursor-pointer border-lime-200 p-3"
+          onClick={openVideo}
+        >
+          play
+        </p>
+        <VideoModal isOpen={isVideoOpen} onClose={closeVideo} />
+      </section>
+      <CardLayout
+        title="TEMPLE MAINTENANCE"
+        desc="Donate to Support Hare Krishna Temples and Monasteries"
+        info="Lorem ipsum dolor sit amet, consectetur adipiscing"
+        donate='10'
+      />
+    </>
   );
 };
 
