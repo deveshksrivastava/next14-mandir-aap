@@ -15,6 +15,7 @@ import Krisna from "@/Reuseable/Krisna";
 import YourComponent from "@/Reuseable/slider";
 import CardLayout from "@/Reuseable/cardsectionlayout";
 import VideoModal from "@/Reuseable/videomodel";
+import CustomBusiness from "@/Reuseable/custombusiness";
 
 const elastic = [
   {
@@ -87,7 +88,32 @@ const Home = () => {
         : sliderRef.current.slickNext();
     }
   };
-
+  const cardtample = [
+    {
+          info: "Thanks for a wonderful tour! I have long dreamed of visiting the Hindu monasteries of India.",
+          icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+          desc: "UK",
+          title: "Jams Gordon",
+        },
+        {
+          info: "Went on this tour with the whole family. Super! Everyone liked the ancient temples!",
+          icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+          desc: "New yark",
+          title: "David Bowman",
+        },
+        {
+          info: "It was the best tour ever! I got a lot of impressions of beautiful places and breathtaking views.",
+          icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+          desc: "Australiya",
+          title: "Jone smith",
+        },
+        {
+          info: "I also visited the most beautiful temples and monasteries in India.",
+          title: "Trips",
+          desc: "Sed do eiusm od tempor",
+          icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+        },
+  ];
   const cardData = [
     {
       icon: MdFrontHand,
@@ -131,7 +157,32 @@ const Home = () => {
       title: "Excursions",
     },
   ];
-
+  const studentreview = [
+    {
+      info: "I learned a lot from these yoga courses and meditation lessons. I began to feel better!",
+      icon: "https://e-learning-tech.netlify.app/images/team2.jpg",
+      desc: "Redding, CA",
+      title: "Jennifer Lee",
+    },
+    {
+      info: "I am a beginner. It was great to learn more about meditation and yoga. Thank you!",
+      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+      desc: "New yark",
+      title: "Gorge Gorden",
+    },
+    {
+      info: "Lately, I have been practicing meditation. I did not expect such great results. Thanks!",
+      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+      desc: "Chicago, IL ",
+      title: "John More",
+    },
+    {
+      info: "It is the best meditation course! Thanks to you, I learned to relax and feel my body.",
+      title: "Piter Bowman",
+      desc: "Austin, TX",
+      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+    },
+  ];
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const openVideo = () => {
@@ -190,7 +241,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <YourComponent />
+          {<YourComponent cardData={cardtample}/>}
         </div>
       </section>
       <CardLayout
@@ -215,6 +266,27 @@ const Home = () => {
         info="Lorem ipsum dolor sit amet, consectetur adipiscing"
         donate='10'
       />
+       <section className="text-black ">
+        <div className="w-full sm:p-20 p-5 leading-none min-h-[100vh] bg-white flex flex-col gap-10   ">
+          <h1 className="font-medium">
+          FEEDBACK</h1>
+          <div className="sm:flex  w-full gap-3 justify-between">
+            <div className="sm:w-[30%] w-full font-bold ">
+              <h1 className=" lg:text-[3rem] text-[2rem]">
+              What Our Students Say
+              </h1>
+            </div>
+            <div className="sm:w-[70%] w-full sm:flex flex-col  mt-5 font-medium  leading-7">        
+              <YourComponent cards={studentreview} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="">
+
+      <CustomBusiness />
+      </div>
     </>
   );
 };
