@@ -117,10 +117,10 @@ const DonateModel = ({ isOpen, onClose, donate }) => {
             <span>Login</span>
           </div>
 
-          <div className="flex  border-2 border-white w-[200px]  justify-start text-center">
+          <div className="flex  border-2  border-white  sm:w-[200px]  justify-start text-center">
             <label className="  p-2  bg-orange-500  ">Donation Total</label>
             <input
-              className="w-[30px] bg-none outline-none m-auto "              
+              className="w-[30px] bg-transparent outline-none m-auto "              
               value={'$'+donate}
             />
           </div>
@@ -130,7 +130,7 @@ const DonateModel = ({ isOpen, onClose, donate }) => {
             onClick={(e) => {
               handleSubmit(e);
             }}
-            classname="flex w-[200px]  justify-center items-center  bg-red-600 px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+            classname="flex sm:w-[200px]  justify-center items-center  bg-red-600 px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
             icon={<FaAngleRight />}
           />
 

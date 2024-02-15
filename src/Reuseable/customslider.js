@@ -16,7 +16,10 @@ const CustomSlide = (props) => {
               {title}
             </h2>
             <p className="sm:p-10 hidden sm:flex tracking-wide">{label}</p>
-            <div className="bg-red-500 bg:hover sm:w-[10rem]  p-2">
+            <div
+            //  className="bg-red-500 bg:hover sm:w-[10rem]  p-2"
+             className="flex sm:w-[200px]  justify-center items-center  bg-red-600 sm:p-4 p-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+            >
               Read More
             </div>
           </div>

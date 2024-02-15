@@ -4,7 +4,7 @@ const CustomArrow = ({ direction, onClick }) => {
   return (
     <div
       className={`sm:flex hidden absolute ${
-        direction === "prev" ? "left-0" : "right-0"
+        direction === "prev" ? "left-5" : "right-5"
       } top-1/2 transform -translate-y-1/2 z-10`}
     >
       {direction === "prev" ? (
