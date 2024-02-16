@@ -6,7 +6,7 @@ const Donate = (props) => {
   const [amount, setAmount] = useState(val);
   
   const [isDonateOpen, setIsDonateOpen] = useState(false);
-
+  const [active,setActive]=useState(0);
   const openDonate = () => {
     setIsDonateOpen(true);
   };
@@ -20,13 +20,15 @@ const Donate = (props) => {
     setAmount("");
     inputRef.current.focus();
   };
-  const handleButtonClick = (value) => {
+  const handleButtonClick = (value,index) => {
     // Update the state and set the value of the input field
     const val = value;
     setAmount(val);
+    setActive(index)
   };
   useEffect(() => {}, [amount]);
-
+  const arr=[10,20,30,200]
+  console.log(active);
   return (
     <>
       <div className="flex bg-white  justify-center text-center">
@@ -42,20 +44,30 @@ const Donate = (props) => {
         />
       </div>
       <div className="sm:flex  gap-2  grid grid-cols-3 px-4">
-        <button
-          className="sm:w-[100px] p-2  bg-white"
+        {arr.map((val,index)=>{
+          return(
+            <button key={index}
+          className={`sm:w-[100px] p-2  bg-white  hover:bg-red-500 ${active === index ? 'border-2':''}  `}
+          onClick={() => handleButtonClick(val,index)}
+        >
+          ${val}
+        </button>            
+          )
+        })}
+        {/* <button
+          className="sm:w-[100px] p-2  bg-white  hover:bg-red-500"
           onClick={() => handleButtonClick(10)}
         >
           $10
         </button>
         <button
-          className="sm:w-[100px]  bg-white"
+          className="sm:w-[100px] p-2  bg-white  hover:bg-red-500"
           onClick={() => handleButtonClick(20)}
         >
           $20
         </button>
         <button
-          className="sm:w-[100px]  bg-white"
+          className="sm:w-[100px] p-2   bg-white  hover:bg-red-500"
           onClick={() => handleButtonClick(30)}
         >
           $30
@@ -65,7 +77,7 @@ const Donate = (props) => {
           onClick={() => handleButtonClick(200)}
         >
           $200
-        </button>
+        </button> */}
         <button
           className="sm:w-[200px] w-[150px]  bg-white p-2"
           onClick={handleClick}
