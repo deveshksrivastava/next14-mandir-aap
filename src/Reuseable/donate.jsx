@@ -4,7 +4,7 @@ import DonateModel from "./donatemodel";
 const Donate = (props) => {
   const { val } = props;
   const [amount, setAmount] = useState(val);
-  console.log(val, amount);
+  
   const [isDonateOpen, setIsDonateOpen] = useState(false);
 
   const openDonate = () => {

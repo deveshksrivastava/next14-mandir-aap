@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import Links from "./links/Links"
 import styles from "./navbar.module.css"
 import { auth } from "@/lib/auth";
+import Header from "./header"
 
 const Navbar =  () => {
   const pathname = usePathname()
@@ -19,8 +20,10 @@ const Navbar =  () => {
     {/* <div className={`${styles.container} top-0 z-10 `}> */}
       <Link href="/" className={styles.logo}>Logo</Link>
       <div>
-        <Links session={loadSession}/>
+      <Header />
+        {/* <Links session={loadSession}/> */}
       </div>
+      <div className="sm:flex hidden"></div>
     </div>
   )
 }
