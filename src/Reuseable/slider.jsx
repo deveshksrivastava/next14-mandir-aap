@@ -87,8 +87,8 @@ const Yourcomponent = (props) => {
             key={item.title}
             className="sm:p-4 p-2  w-[100%] mb-10    bg-white  text-black "
           >
-            <div>
-              <div className={` bg-orange-500 p-10 flex flex-col gap-3  `}>
+            <div className="">
+              <div className={` bg-orange-500 sm:p-10 sm:h-[15rem] h-[10rem] overflow-auto flex flex-col gap-3  `}>
                 <div className="w-full flex justify-center sm:text-3xl">
                   <BiSolidQuoteAltRight />
                 </div>
@@ -121,7 +121,7 @@ const Yourcomponent = (props) => {
           >
           
             <div>
-              <div className={` bg-orange-500 p-10 flex flex-col gap-3  `}>
+              <div className={` bg-orange-500 sm:h-[15rem] h-[10rem] overflow-auto  sm:p-10 flex flex-col gap-3  `}>
                 <div className="w-full flex justify-center sm:text-3xl">
                   <BiSolidQuoteAltRight />
                 </div>

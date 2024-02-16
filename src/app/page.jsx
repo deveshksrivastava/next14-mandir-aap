@@ -45,11 +45,13 @@ const Home = () => {
   const settings = {
     dots: true,
     infinite: true,
+    // lazyLoad: 'ondemand',
+    fade: true,
     speed: 500,
     slidesToShow: 1,
     autoplay: true,
     slidesToScroll: 1,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
     arrows: false,
     afterChange: (current) => setCurrentSlide(current),
     appendDots: (dots) => {
@@ -196,7 +198,8 @@ const Home = () => {
   return (
     <>
       <section className="text-center">
-        <Slider {...settings} ref={sliderRef}>
+        <Slider {...settings} ref={sliderRef} >
+        {/* Slide content */}
           {elastic.map((item) => (
             <CustomSlide
               key={item.id}

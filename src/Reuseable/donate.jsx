@@ -7,6 +7,7 @@ const Donate = (props) => {
   
   const [isDonateOpen, setIsDonateOpen] = useState(false);
   const [active,setActive]=useState(0);
+  const arr=[10,20,30,200]
   const openDonate = () => {
     setIsDonateOpen(true);
   };
@@ -17,6 +18,7 @@ const Donate = (props) => {
   const inputRef = useRef(null);
   const handleClick = () => {
     // Focus on the input element when the button is clicked
+    setActive('');
     setAmount("");
     inputRef.current.focus();
   };
@@ -27,7 +29,22 @@ const Donate = (props) => {
     setActive(index)
   };
   useEffect(() => {}, [amount]);
-  const arr=[10,20,30,200]
+  const handleInput=(e)=>{      
+    const inputValue = e.target.value;        
+      setAmount(inputValue);
+      setTimeout(() => {
+         // Check if the amount exists in the array
+        const index = arr.findIndex(item => item.toString() === inputValue);
+
+        if (index !== -1) {
+            // Amount found in the array
+            setActive(index)
+        }else{
+          setActive('')
+        }
+    }, 2000);
+     
+  }
   console.log(active);
   return (
     <>
@@ -37,9 +54,7 @@ const Donate = (props) => {
           className="w-[150px] outline-none ml-2 "
           name={amount}
           value={amount}
-          onChange={(e) => {
-            setAmount(e.target.value);
-          }}
+          onChange={handleInput}
           ref={inputRef}
         />
       </div>
@@ -79,14 +94,14 @@ const Donate = (props) => {
           $200
         </button> */}
         <button
-          className="sm:w-[200px] w-[150px]  bg-white p-2"
+          className={`sm:w-[200px] w-[150px]  bg-white p-2 ${active === '' ? "border-2":""}`}
           onClick={handleClick}
         >
           Custom Amount
         </button>
       </div>
       <div className="flex bg-white  justify-center text-center">
-        <label className=" w-[200px] p-2  bg-orange-400  "           onClick={openDonate}>Donate</label>
+        <label className={` w-[200px] p-2  bg-orange-400  `} onClick={openDonate}>Donate</label>
       </div>
       <DonateModel isOpen={isDonateOpen} onClose={closeDonate} donate={amount}/>
     </>

@@ -17,18 +17,23 @@ module.exports = {
         'play-back': "url('/play.jpg')",
       },
       keyframes: {
-        slideIn: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
+        slidedown: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(0)' },
         },
         zoomOut: {
           '0%': { transform: 'scale(1)' },
           '100%': { transform: 'scale(1.2)' },
         },
+        moveRightToLeft: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       animation: {
-        slideIn: 'slideIn 2s ease-in-out',
-        zoomOut: 'zoomOut 2s ease-in-out infinite',
+        slidedown: 'slidedown 5s infinite',
+        zoomOut: 'zoomOut 5s ease-in-out infinite',
+        moveRightToLeft: 'moveRightToLeft 5s infinite',
       },
     },
   },
