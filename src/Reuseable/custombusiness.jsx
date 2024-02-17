@@ -105,8 +105,8 @@ const CustomBusiness = () => {
         <div className="max-w-7xl mr-3 w-full sm:h-[578px] h-[500px] bg-[#ECF7FF] rounded-tr-[137px] sm:rounded-tr-[400px] absolute top-0 z-10"></div>
         <div className="z-30 absolute top-0 h-full w-full flex flex-col  py-12">
           <div className=" flex flex-col sm:gap-16 md:gap-24 gap-12">
-            <div className="mx-auto md:text-5xl text-4xl text-[#331B3B]  -tracking-[0.01] leading-[106.3%]">
-              <h1 className=" font-bold self-center text-center">What We Do</h1>
+            <div className="mx-auto md:text-5xl font-family-h2 text-4xl text-[#331B3B]  -tracking-[0.01] leading-[106.3%]">
+              <h1 className="  text-center">What We Do</h1>
               <span className="font-light self-center">
                 For Your
                 <span className="relative ml-1">

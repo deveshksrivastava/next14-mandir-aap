@@ -8,6 +8,7 @@
   --text: white;
   --textSoft: #e5e5e5;
   --btn: #3673fd;
+  --theme-font-h2_font-family:"Kumbh Sans",sans-serif;
 }
 
 * {
@@ -17,7 +18,7 @@
 }
 
 body {
-  background-color: var(--bg);
+  background-color: var(--bg) ;
   color: var(--text);
 
 }
@@ -36,6 +37,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 
 @media (max-width: 1536px) {
@@ -93,4 +95,8 @@ a {
 
 .animate-slideIn {
   animation: slideIn 2s ease-in-out;
+}
+
+.font-family-h2{
+  font-family: var(--theme-font-h2_font-family);
 }

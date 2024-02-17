@@ -3,17 +3,18 @@ const CustomSlide = (props) => {
     const { index, imgurl, title, label } = props;
     return (
       <>
+      {/* md:h-[100vh] h-[50vh] */}
         {/* <div className=" bg-blend-screen w-full z-0"> */}
-        <div key={index} className="relative  sm:h-[100vh] h-[60vh]   w-full">
+        <div key={index} className={`relative     w-full h-screen  ${styles.sliderhight}` }>
           <div
-            className={`absolute insert-0  animate-zoomOut   top-0 z-10 sm:h-[100vh] h-[60vh]   overflow-hidden w-full bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center  `}
+            className={`absolute insert-0  animate-zoomOut    top-0 z-10 h-screen  overflow-hidden w-full bg-no-repeat bg-center bg-cover flex flex-col justify-center items-center  `}
             style={{
               backgroundImage: `url(${imgurl})`,
               opacity: "60%",
             }}
           ></div>
           <div className="absolute  bg-transparent z-10 sm:h-[100vh] 2xl:top-10 h-[50vh] font-serif  overflow-hidden w-full bg-no-repeat bg-cover flex flex-col justify-center items-center ">
-            <h2 className=" font-bold animate-moveRightToLeft text-white sm:text-[4rem] lg:[3rem] 2xl:text-[7rem]  leading-tight text-2xl flex justify-center sm:p-0  p-5 z-20  ">
+            <h2 className=" font-family-h2 animate-moveRightToLeft text-white sm:text-[4rem] lg:[3rem] 2xl:text-[7rem]  leading-tight text-2xl flex justify-center sm:p-0  p-5 z-20  ">
               {title}
             </h2>
             <p className="sm:p-10 hidden sm:flex tracking-wide animate-slidedown">{label}</p>

@@ -1,7 +1,6 @@
 "use client"
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
-import Links from "./links/Links"
 import styles from "./navbar.module.css"
 import { auth } from "@/lib/auth";
 import Header from "./header"

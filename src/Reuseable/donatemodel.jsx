@@ -26,7 +26,7 @@ const DonateModel = ({ isOpen, onClose, donate }) => {
 
     if (!email.trim()) {
       newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
       newErrors.email = "Invalid email format";
     }
     // if (!role.trim()) {
@@ -48,7 +48,7 @@ const DonateModel = ({ isOpen, onClose, donate }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("form submitted", value);
+      console.log("form submitted", data);
     } else {
       console.log("form Validation fails");
     }

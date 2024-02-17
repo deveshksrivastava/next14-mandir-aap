@@ -15,10 +15,10 @@ const Header = () => {
     console.log(currentPath);
   const dropdownRef = useRef(null);
   const [clickedLabel, setClickedLabel] = useState(
-    localStorage?.getItem("label") || ""
+    typeof localStorage !== 'undefined' ? localStorage.getItem("label") || "" : ""
   );
   const [clickedNavLabel, setClickedNavLabel] = useState(
-    localStorage.getItem("navlabel") || ""
+    typeof localStorage !== 'undefined' ? localStorage.getItem("navlabel") || "" : ""
   );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);

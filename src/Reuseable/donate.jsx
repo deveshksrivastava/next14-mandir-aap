@@ -45,7 +45,7 @@ const Donate = (props) => {
     }, 2000);
      
   }
-  console.log(active);
+
   return (
     <>
       <div className="flex bg-white  justify-center text-center">

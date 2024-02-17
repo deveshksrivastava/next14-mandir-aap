@@ -18,9 +18,9 @@ const CardLayout =(props) => {
         alt="logo"
       />
       <h1 className="text-[2rem] font-medium">{title}</h1>
-      <h1 className="md:text-[4rem]  text-[2rem] sm:p-0 text-center max-w-7xl   font-extrabold">
+      <h2 className="md:text-[4rem] font-family-h2 text-[2rem] sm:p-0 text-center max-w-7xl   ">
       {desc}      
-      </h1>
+      </h2>
       <p>{info}</p>
       {cardData &&
       <SecCustomCard data={cardData}/>

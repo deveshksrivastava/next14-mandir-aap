@@ -63,7 +63,7 @@ const Footer = () => {
     //   </div>
     // </div>
     <>
-      <div className="py-20 bg-red-900 w-full flex flex-col items-center gap-5 justify-center">
+      <div className="bottom-0 overflow-auto  py-20 bg-red-900 w-full flex flex-col items-center gap-5 justify-center">
         <Image
           src="/Logo-retina-inverse.png"
           height={100}

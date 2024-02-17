@@ -65,13 +65,15 @@ const Home = () => {
           style={{
             position: "absolute",
             bottom: "0px",
+            
           }}
         >
-          <ul className="p-5 border-1">
+          <ul className="mb-5">
             {dots.map((dot, index) => (
               <li
-                className={`w-[10px] h-[10px]   border rounded-full hover:bg-red-400 ${
-                  index === currentSlide ? "bg-red-400" : ""
+                // style={{width:"10px",height:"10px"}}
+                className={` ${styles.bullet} border rounded-full hover:bg-red-400 ${
+                  index === currentSlide ? "bg-red-400 " : "bg-white"
                 }`}
                 key={dot.key}
                 onClick={() => handleDotClick(index)}
@@ -222,7 +224,7 @@ const Home = () => {
         <div className="w-full sm:p-20 p-5 leading-none min-h-[100vh] bg-white flex flex-col gap-10   ">
           <h1 className="font-medium">SPIRITUAL EXCURSIONS</h1>
           <div className="sm:flex  w-full gap-3 justify-between">
-            <div className="sm:w-[50%] w-full font-bold ">
+            <div className="sm:w-[50%] w-full font-family-h2 ">
               <h1 className=" lg:text-[3rem] text-[2rem]">
                 We Do Tours to Hare Krishna Temples
               </h1>
@@ -274,7 +276,7 @@ const Home = () => {
           <h1 className="font-medium">
           FEEDBACK</h1>
           <div className="sm:flex  w-full gap-3 justify-between">
-            <div className="sm:w-[30%] w-full font-bold ">
+            <div className="sm:w-[30%] w-full font-family-h2 ">
               <h1 className=" lg:text-[3rem] text-[2rem]">
               What Our Students Say
               </h1>

@@ -9,7 +9,6 @@ export const metadata = {
 
 const AboutPage = () => {
 
-  // console.log("lets check where it works")
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
@@ -42,7 +41,8 @@ const AboutPage = () => {
         <Image
           src="/about.png"
           alt="About Image"
-          fill
+          width="400"
+          height="500"
           className={styles.img}
         />
       </div>
