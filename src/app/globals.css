@@ -9,6 +9,8 @@
   --textSoft: #e5e5e5;
   --btn: #3673fd;
   --theme-font-h2_font-family:"Kumbh Sans",sans-serif;
+  --theme-font-h2_font-size: 36px;
+  --theme-font-h2_font-bold: 700;
 }
 
 * {
@@ -97,6 +99,9 @@ a {
   animation: slideIn 2s ease-in-out;
 }
 
+/* ------ font family--------- */
 .font-family-h2{
   font-family: var(--theme-font-h2_font-family);
+  font-size: var(--theme-font-h2_font-size);
+  font-weight: var(--theme-font-h2_font-bold);
 }
