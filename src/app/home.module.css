@@ -199,3 +199,20 @@
   width: 10px !important;
   height: 10px !important;
 }
+
+
+
+
+/* --------slick slider--------- */
+.slick-slide {
+  transition: transform 0.5s ease;
+}
+
+.slick-slide mnb {
+  width: 100%;
+  height: auto;
+}
+
+.zoom-out {
+  transform: scale(0.8);
+}

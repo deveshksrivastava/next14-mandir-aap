@@ -41,7 +41,7 @@ const elastic = [
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef();
-
+  
   const settings = {
     dots: true,
     infinite: true,
@@ -53,7 +53,32 @@ const Home = () => {
     slidesToScroll: 1,
     autoplaySpeed: 5000,
     arrows: false,
-    afterChange: (current) => setCurrentSlide(current),
+    beforeChange: (current, next) => {
+      const slides = document.querySelectorAll('.mnb');
+      const slideslabel = document.querySelectorAll('.label-p');
+      const slidesl = document.querySelectorAll('.label-b');
+      const slidestitle = document.querySelectorAll('.moveRightToLeft');
+      slides[current]?.classList.remove('animate-zoomOut');
+      slidesl[current]?.classList.remove('animate-slidedown');
+      slidestitle[current]?.classList.remove('animate-moveRightToLeft');
+      slideslabel[current]?.classList.remove('animate-slidedown');
+    },
+    afterChange: (current) => {
+      setCurrentSlide(current)
+      const slides = document.querySelectorAll('.mnb');
+      const slideslabel = document.querySelectorAll('.label-p,label-b');
+      const slidesl = document.querySelectorAll('.label-b');
+      const slidestitle = document.querySelectorAll('.moveRightToLeft');
+      
+
+      slides[current]?.classList.add('animate-zoomOut');
+      slideslabel[current]?.classList.add('animate-slidedown');
+      slidesl[current]?.classList.add('animate-slidedown');
+      
+      slidestitle[current]?.classList.add('animate-moveRightToLeft');
+
+    },
+    // afterChange: (current) => setCurrentSlide(current),
     appendDots: (dots) => {
       const handleDotClick = (index) => {
         if (sliderRef.current) {
@@ -198,13 +223,13 @@ const Home = () => {
     setIsVideoOpen(false);
   };
 
+  // ref={sliderRef}
   return (
     <>
       <section className="text-center">
-        <Slider {...settings} ref={sliderRef}>
+        <Slider {...settings} ref={sliderRef}   >
           {/* Slide content */}
-          {elastic.map((item) => {
-            return (
+          {elastic.map((item) => 
              <CustomSlide
               index={item.id}
               title={item.title}
@@ -212,8 +237,7 @@ const Home = () => {
               imgurl={item.imageUrl}
              
             />
-            )  
-          })}
+          )}
         </Slider>
         <CustomArrow direction="prev" onClick={goToSlide} />
         <CustomArrow direction="next" onClick={goToSlide} />
@@ -226,7 +250,7 @@ const Home = () => {
       />
       <section className="text-black ">
         <div className="w-full sm:p-20 p-5 leading-none min-h-[100vh] bg-white flex flex-col gap-10   ">
-          <h1 className="font-medium">SPIRITUAL EXCURSIONS</h1>
+          <h1 className="font-size-head">SPIRITUAL EXCURSIONS</h1>
           <div className="sm:flex  w-full gap-3 justify-between">
             <div className="sm:w-[50%] w-full font-family-h2 ">
               <h1 className=" lg:text-[3rem] text-[2rem]">

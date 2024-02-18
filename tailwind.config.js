@@ -31,9 +31,9 @@ module.exports = {
         },
       },
       animation: {
-        slidedown: 'slidedown 5s infinite',
-        zoomOut: 'zoomOut 5s ease-in-out infinite',
-        moveRightToLeft: 'moveRightToLeft 5s infinite',
+        slidedown: 'slidedown 3s ',
+        zoomOut: 'zoomOut 5s ease-in-out ',
+        moveRightToLeft: 'moveRightToLeft 5s ',
       },
     },
   },

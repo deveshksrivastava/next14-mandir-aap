@@ -105,3 +105,16 @@ a {
   font-size: var(--theme-font-h2_font-size);
   font-weight: var(--theme-font-h2_font-bold);
 }
+
+.font-size-head{
+    font-size: 1rem;
+    line-height: 3rem;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    opacity: .9;
+  
+}
+
+
