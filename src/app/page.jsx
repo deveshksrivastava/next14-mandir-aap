@@ -226,8 +226,8 @@ const Home = () => {
   // ref={sliderRef}
   return (
     <>
-      <section className="text-center">
-        <Slider {...settings} ref={sliderRef}   >
+      <section className="">
+        <Slider {...settings} ref={sliderRef} className=""  >
           {/* Slide content */}
           {elastic.map((item) => 
              <CustomSlide
