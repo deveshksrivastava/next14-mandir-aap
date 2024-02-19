@@ -26,14 +26,14 @@ module.exports = {
           '100%': { transform: 'scale(1.2)' },
         },
         moveRightToLeft: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(0)' },
+          '0%': { transform: 'translateX(10%)' },
+          // '10%': { transform: 'translateX(0)' },
         },
       },
       animation: {
         slidedown: 'slidedown 3s ',
-        zoomOut: 'zoomOut 5s ease-in-out ',
-        moveRightToLeft: 'moveRightToLeft 5s ',
+        zoomOut: 'zoomOut 7s ease-in-out ',
+        moveRightToLeft: 'moveRightToLeft 2s ',
       },
     },
   },

@@ -51,7 +51,7 @@ const Home = () => {
     slidesToShow: 1,
     autoplay: true,
     slidesToScroll: 1,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
     arrows: false,
     beforeChange: (current, next) => {
       const slides = document.querySelectorAll('.mnb');
@@ -62,6 +62,7 @@ const Home = () => {
       slidesl[current]?.classList.remove('animate-slidedown');
       slidestitle[current]?.classList.remove('animate-moveRightToLeft');
       slideslabel[current]?.classList.remove('animate-slidedown');
+
     },
     afterChange: (current) => {
       setCurrentSlide(current)
@@ -71,11 +72,12 @@ const Home = () => {
       const slidestitle = document.querySelectorAll('.moveRightToLeft');
       
 
-      slides[current]?.classList.add('animate-zoomOut');
-      slideslabel[current]?.classList.add('animate-slidedown');
-      slidesl[current]?.classList.add('animate-slidedown');
-      
       slidestitle[current]?.classList.add('animate-moveRightToLeft');
+      slides[current]?.classList.add('animate-zoomOut');
+      setTimeout(()=>{
+        slideslabel[current]?.classList.add('animate-slidedown');
+        slidesl[current]?.classList.add('animate-slidedown');
+      },1000)
 
     },
     // afterChange: (current) => setCurrentSlide(current),
