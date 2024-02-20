@@ -10,7 +10,7 @@ const CardLayout =(props) => {
   return (
     <>
     <section className=" sm:p-0 text-center ">
-    <div className="w-full py-20  min-h-[100vh] bg-yellow-50 text-black flex flex-col justify-center items-center ">
+    <div className="w-full    min-h-[100vh] bg-yellow-50 text-black flex flex-col justify-center items-center ">
       <Image
         src="/Logo-retina-inverse.png"
         height={50}
@@ -18,11 +18,12 @@ const CardLayout =(props) => {
         alt="logo"
         className=''
       />
+
       <h1 className="text-[2rem]  font-size-head">{title}</h1>
-      <h2 className="md:text-[4rem] font-family-h2 text-[2rem] sm:p-0 text-center max-w-1xl   ">
+      <h2 className="md:text-[3rem] font-family-h2 text-[2rem] sm:p-0 leading-10 text-center max-w-['768px']   ">
       {desc}      
       </h2>
-      <p>{info}</p>
+      <p className='my-5'>{info}</p>
       {cardData &&
       <SecCustomCard data={cardData}/>
       }
@@ -30,8 +31,12 @@ const CardLayout =(props) => {
       <CustomCard data={data}/>
       }
       {donate && 
+
+
       <Donate val={donate}/>
+
       }
+
     </div>
   </section>
     </>

@@ -4,7 +4,7 @@ const SecCustomCard = (props) => {
   const { data } = props;
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:px-20 px-5 gap-5 items-center w-full ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:px-10 p-5 gap-5 items-center w-full ">
         {data?.map((item) => (
           <div
             key={item.id}

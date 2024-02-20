@@ -15,7 +15,7 @@ const CustomCard = ({ data }) => {
   };
     return (
       <>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:px-20 px-5 gap-5 items-center w-full ">
+        <div className="grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-4 sm:p-5 lg:p-10 p-5 gap-5 items-center w-full ">
           {data?.map((item, index) => (
             <div
               key={index}
