@@ -16,6 +16,7 @@ import YourComponent from "@/Reuseable/slider";
 import CardLayout from "@/Reuseable/cardsectionlayout";
 import VideoModal from "@/Reuseable/videomodel";
 import CustomBusiness from "@/Reuseable/custombusiness";
+import CountUp from 'react-countup';
 
 const elastic = [
   {
@@ -225,7 +226,24 @@ const Home = () => {
     setIsVideoOpen(false);
   };
 
-  // ref={sliderRef}
+  const countproject=[
+    {
+      icon: MdFrontHand,
+      count:29,
+      desc:"Lorem ipsum dolor sit amet,consectetur elit."
+    },
+    {
+      icon: MdFrontHand,
+      count:9,
+      desc:"Lorem ipsum dolor sit amet,consectetur elit."
+    },
+    {
+      icon: MdFrontHand,
+      count:19,
+      desc:"Lorem ipsum dolor sit amet,consectetur elit."
+    }
+  ]
+
   return (
     <>
       <section className="">
@@ -277,6 +295,19 @@ const Home = () => {
             </div>
           </div>
           {<YourComponent cardData={cardtample} />}
+        </div>
+      </section>
+      <section>
+        <div className="max-w-full px-5 m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:px-10 bg-white text-black p-5 gap-5 items-center w-full  ">
+        {countproject?.map((item,ind)=>
+        <div key={ind} className="flex flex-col border-2 px-5 gap-3 text-center items-center ">
+          <item.icon  
+           className={` sm:w-[2rem] sm:h-[5rem] w-[50px] h-[50px]  
+            
+               `}/>
+          <CountUp end={item.count}  delay={2} className="text-xl bg-black text-cyan-50 rounded p-5" duration={5}/>
+          <p>{item.desc}</p>
+        </div>)}
         </div>
       </section>
       <CardLayout

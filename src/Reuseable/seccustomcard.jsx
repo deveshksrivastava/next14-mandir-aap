@@ -10,11 +10,13 @@ const SecCustomCard = (props) => {
             key={item.id}
             className="max-w-sm  rounded overflow-hidden shadow-lg bg-white"
           >
-            <img
-              className="w-full  transition-transform ease-in-out duration-500 transform hover:scale-110 cursor-pointer"
-              src={item.icon}
-              alt="Sunset in the mountains"
-            />
+            <div className="w-full overflow-hidden">
+              <img
+                className="w-full transition-transform ease-in-out duration-500 transform hover:scale-110 cursor-pointer"
+                src={item.icon}
+                alt="Sunset in the mountains"
+              />
+            </div>
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">{item.title}</div>
               <p className="text-[#4444446e] text-base">

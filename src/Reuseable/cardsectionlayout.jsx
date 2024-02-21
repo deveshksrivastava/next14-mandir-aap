@@ -9,8 +9,8 @@ const CardLayout =(props) => {
 
   return (
     <>
-    <section className=" sm:p-0 text-center ">
-    <div className="w-full    min-h-[100vh] bg-yellow-50 text-black flex flex-col justify-center items-center ">
+    <section className=" sm:p-0  text-center ">
+    <div className="w-full  py-10  min-h-[100vh] bg-yellow-50 text-black flex flex-col justify-center items-center ">
       <Image
         src="/Logo-retina-inverse.png"
         height={50}
