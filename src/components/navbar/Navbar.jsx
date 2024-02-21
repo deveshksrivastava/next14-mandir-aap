@@ -15,7 +15,7 @@ const Navbar =  () => {
   };
 
   return (
-    <div className={`${styles.container} ${pathname === '/' && ' absolute w-full flex z-10 p-2'} `}>
+    <div className={`${styles.container} ${pathname === '/' ? ' absolute w-full flex z-10 p-2':"z-20 p-2"} `}>
     {/* <div className={`${styles.container} top-0 z-10 `}> */}
       <Link href="/" className={styles.logo}>Logo</Link>
       <div>

@@ -195,7 +195,7 @@ const Header = () => {
 
             <NavLink item={link} key={link.title} />
           ))} */}
-            <ul className="sm:hidden w-full flex flex-col text-center gap-5 ">
+            <ul className="sm:hidden w-full flex flex-col text-center gap-5 z-20 ">
               {navLinks.map((link, index) => (
                 <li key={index} className="">
                   <Link

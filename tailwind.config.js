@@ -15,6 +15,7 @@ module.exports = {
       },
       backgroundImage: {
         'play-back': "url('/play.jpg')",
+        'shakti-back': "url('/slider/slider1.jpg')"
       },
       keyframes: {
         slidedown: {
