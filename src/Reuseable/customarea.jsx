@@ -8,7 +8,7 @@ import React from 'react';
 //     onChange: (id: string, value: string) => void;
 //   }
 
-const CustomTextArea = ({label,id,name,value,onChange,classname}) => {
+const CustomTextArea = ({label,id,name,placeholder,value,onChange,classname}) => {
     // const handleChange=(e)=>{
     //   onChange(id,e.target.value)
     // }
@@ -19,6 +19,7 @@ const CustomTextArea = ({label,id,name,value,onChange,classname}) => {
          className={`${classname}  `}
           id={id}
           name={name}
+          placeholder={placeholder}
           value={value}
           onChange={onChange}
         />

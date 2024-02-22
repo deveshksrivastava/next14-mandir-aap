@@ -11,13 +11,14 @@ import React,{ChangeEvent,ReactNode} from 'react'
 //     error?:string;
 //     errorStyle?:string;
 //   }
- const CustomInput= ({label,type,id,name,value,onChange,classname,labelstyle,error,errorStyle}) => {
+ const CustomInput= ({label,type,id,name,value,onChange,classname,labelstyle,error,errorStyle,placeholder}) => {
 
   return (
     <>
       {label && <label htmlFor={id} className={`${labelstyle}`}>{label}</label>}
       <input
        className={`${classname} p-2 `}
+       placeholder={placeholder}
         type={type}
         id={id}
         name={name}
