@@ -19,8 +19,8 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
   - [Tutorial-1 Youtube link (next.js)](https://www.youtube.com/watch?v=vCOSTG10Y4o)
-  - [Tutorial-2 Youtube link (next.js)](https://www.youtube.com/watch?v=b98dXZqiDXU&list=PL8HkCX2C5h0WOxJY9hwqWl6bv0RsJbW8U)
-- [Tutorial-2 Youtube link (next.js)](https://www.youtube.com/watch?v=WgFpPjD7D6I) (Best)
+  - [Tutorial-2 Youtube link (next.js)](https://www.youtube.com/watch?v=b98dXZqiDXU&list=PL8HkCX2C5h0WOxJY9hwqWl6bv0RsJbW8U) (Best)
+- [Tutorial-3 Youtube link (next.js)](https://www.youtube.com/watch?v=WgFpPjD7D6I) 
 
 
 ---------------------
@@ -28,25 +28,27 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - 00:00 Introduction-next-03:00Next.js Installation 
  - Create next app
 ```
-npm create-net-app@latest .
-no/yes/no/yes/yes/no
-Calling page '@/lib/action', @ means source folder
+ - npm create-net-app@latest .
+ - no/yes/no/yes/yes/no
+ - Calling page '@/lib/action', @ means source folder
 ```
  - 07:31 Next.js 14 Folder Structure
+
 ```
- - [slug]  or [id]
-```
-    blog 
-      -- page.js
-      [slug]  or [id]
+    routing  
+      blog 
+      [id]
           pages.js
+    #group name 
+        componet>(admin)   
+            - register
+            - Login
+            - Passwrd
+    Blovcking
+        _admin
+          - register
 
 ```
-#### group name
-  (auth)
-      -folder(contact/login/register)```
-```
-
 
 
  - 09:35 Next.js App Route Explained (Next.js Routing)
@@ -102,7 +104,10 @@ Calling page '@/lib/action', @ means source folder
  - 04:17:56 Next.js 14 NEXT_REDIRECT Error and the Solution
  - 04:19:40 Next.js 14 Middleware Explained | Next.js Auth.js (Next-Auth) How to Protect Routes?
  - 04:33:11 Next.js 14 Admin Dashboard Tutorial with Server Actions
- - 04:55:14 Outro
+<!--- 
+This section represents the outro of the project.
+-->
+- 04:55:14 Outro
 
 
 https://shakti.ancorathemes.com/home-2/
@@ -119,6 +124,7 @@ https://shakti.ancorathemes.com/home-2/
 
 
 ## ⏰ timestamp  [next.js youtube link](htps://www.youtube.com/watch?v=b98dXZqiDXU&list=PL8HkCX2C5h0WOxJY9hwqWl6bv0RsJbW8U)
+
  - Introduction to Nextjs 
  - 02:49:05 - Nodejs installation 
  - 04:36:18 - Vs Code Installation
@@ -145,6 +151,33 @@ https://shakti.ancorathemes.com/home-2/
  - 01:51:36:01 -Template
  - 01:57:45:15 - 02:02:49:23
  - Building The Ultimate Nextjs14 Portfolio Website  (2024)-  -  - 02:05:32:01
+
+
+## ⏰ timestamp  - [Tutorial-2 Youtube link (next.js)](https://www.youtube.com/watch?v=b98dXZqiDXU&list=PL8HkCX2C5h0WOxJY9hwqWl6bv0RsJbW8U) (Best)
+# Table Contents:
+- Create an app with Next.js 14 — Course part 1
+- 5:05- Deployment with Next.js 14 — Course part 2
+- 7:39Docker with Next.js 14 — Course part 3
+- 14:21 Pages with Next.js 14 — Course part 4
+- 6:50 Router with Next.js 14 — Course part 5
+- 8:59 Link component with Next.js 14 — Course part 6
+- 15:55 Components with Next.js 14 — Course part 7
+- 5:27 Layouts with Next.js 14 — Course part 8
+- 8:32 Images with Next.js 14 — Course part 9
+- 9:56 API Routes with Next.js 14 — Course part 10
+- 5:34 Fonts with Next.js 14 — Course part 11
+- 8:45 Middleware with Next.js 14 — Course part 12
+- 13:19 Seo & Metadatas with Next.js 14 — Course part 13
+- 7:28 Params & Queries with Next.js 14 — Course part 14
+- 14:19 Fetching with Next.js 14 — Course part 15
+- 10:32 Cache explained with Next.js 14 — Course part 16
+- 7:00 Notifications or toasts with Next.js 14 — Course part 17
+- 10:02 Context with Next.js 14 — Course part 18
+- 9:00 Store (Zustand) with Next.js 14 — Course part 19
+- 5:07 Actions with Next.js 14 — Course part 20
+
+
+
 # Markdown syntax guide
 
 ## Headers
