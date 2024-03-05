@@ -124,19 +124,19 @@ const Home = () => {
   const cardtample = [
     {
       info: "Thanks for a wonderful tour! I have long dreamed of visiting the Hindu monasteries of India.",
-      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+      icon: "https://cdn.pixabay.com/photo/2018/04/30/17/53/religion-3363462_1280.jpg",
       desc: "UK",
       title: "Jams Gordon",
     },
     {
       info: "Went on this tour with the whole family. Super! Everyone liked the ancient temples!",
-      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+      icon: "https://cdn.pixabay.com/photo/2018/04/30/17/53/religion-3363462_1280.jpg",
       desc: "New yark",
       title: "David Bowman",
     },
     {
       info: "It was the best tour ever! I got a lot of impressions of beautiful places and breathtaking views.",
-      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+      icon: "https://cdn.pixabay.com/photo/2018/04/30/17/53/religion-3363462_1280.jpg",
       desc: "Australiya",
       title: "Jone smith",
     },
@@ -144,7 +144,7 @@ const Home = () => {
       info: "I also visited the most beautiful temples and monasteries in India.",
       title: "Trips",
       desc: "Sed do eiusm od tempor",
-      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+      icon: "https://cdn.pixabay.com/photo/2018/04/30/17/53/religion-3363462_1280.jpg",
     },
   ];
   const cardData = [
@@ -193,19 +193,19 @@ const Home = () => {
   const studentreview = [
     {
       info: "I learned a lot from these yoga courses and meditation lessons. I began to feel better!",
-      icon: "https://e-learning-tech.netlify.app/images/team2.jpg",
+      icon: "https://cdn.pixabay.com/photo/2018/04/30/17/53/religion-3363462_1280.jpg",
       desc: "Redding, CA",
       title: "Jennifer Lee",
     },
     {
       info: "I am a beginner. It was great to learn more about meditation and yoga. Thank you!",
-      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+      icon: "https://cdn.pixabay.com/photo/2018/04/30/17/53/religion-3363462_1280.jpg",
       desc: "New yark",
       title: "Gorge Gorden",
     },
     {
       info: "Lately, I have been practicing meditation. I did not expect such great results. Thanks!",
-      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+      icon: "https://cdn.pixabay.com/photo/2018/04/30/17/53/religion-3363462_1280.jpg",
       desc: "Chicago, IL ",
       title: "John More",
     },
@@ -213,7 +213,7 @@ const Home = () => {
       info: "It is the best meditation course! Thanks to you, I learned to relax and feel my body.",
       title: "Piter Bowman",
       desc: "Austin, TX",
-      icon: "https://e-learning-tech.netlify.app/images/team3.jpg",
+      icon: "https://cdn.pixabay.com/photo/2018/04/30/17/53/religion-3363462_1280.jpg",
     },
   ];
   const [isVideoOpen, setIsVideoOpen] = useState(false);

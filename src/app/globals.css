@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0d0c22;
+  --bg: #000000;
   --bgSoft: #2d2b42;
   --text: white;
   --textSoft: #e5e5e5;
   --btn: #3673fd;
-  --theme-font-h2_font-family:"Kumbh Sans",sans-serif;
+  --theme-font-h2_font-family: 'Kumbh Sans', sans-serif;
   --theme-font-h2_font-size: 36px;
   --theme-font-h2_font-bold: 600;
 }
@@ -20,9 +20,8 @@
 }
 
 body {
-  background-color: var(--bg) ;
+  background-color: var(--bg);
   color: var(--text);
-
 }
 
 a {
@@ -39,7 +38,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 @media (max-width: 1536px) {
@@ -85,7 +83,6 @@ a {
   }
 }
 
-
 @keyframes slideIn {
   0% {
     transform: translateY(-100%);
@@ -100,22 +97,19 @@ a {
 }
 
 /* ------ font family--------- */
-.font-family-h2{
+.font-family-h2 {
   /* font-family: var(--theme-font-h2_font-family); */
   font-family: Arial, Helvetica, sans-serif;
   font-size: var(--theme-font-h2_font-size);
   font-weight: var(--theme-font-h2_font-bold);
 }
 
-.font-size-head{
-    font-size: 1rem;
-    line-height: 3rem;
-    font-weight: 700;
-    font-style: normal;
-    text-transform: uppercase;
-    letter-spacing: 1.8px;
-    opacity: .9;
-  
+.font-size-head {
+  font-size: 1rem;
+  line-height: 3rem;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  opacity: 0.9;
 }
-
-
